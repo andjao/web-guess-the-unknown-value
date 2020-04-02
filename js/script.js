@@ -6,6 +6,7 @@ let resultN;
 document.addEventListener("click", function (e) {
     if (e.target.id === 'operator') {
         if (document.getElementById('valueFinal').value === '') {
+            document.getElementById('valueFinal').focus();
             alert('Preencha o campo por favor');
             return;
         }
