@@ -48,6 +48,7 @@ document.addEventListener("click", function (e) {
     if (e.target.id === 'clear') {
         expressionE = ' ? ';
         document.getElementById('valueFinal').value = '';
+        document.getElementById('valueFinal').focus();
         document.getElementById('expression').innerHTML = '';
         document.getElementById('resultP').innerHTML = '';
         document.getElementById('resultN').innerHTML = '';
