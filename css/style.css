@@ -38,11 +38,12 @@
     }
 
     #expression {
-        height: 10vw;
+        height: auto;
+        min-height: 10vw;
         border: 1px solid;
         margin: 10px 0 10px 0;
         font-size: 5vw;
-        min-height: 10vw;
+        padding: 1vw;
     }
 
     #resultP {
@@ -50,11 +51,13 @@
         border: 1px solid;
         margin-bottom: 10px;
         font-size: 5vw;
+        padding: 1vw;
     }
 
     #resultN {
         min-height: 10vw;
         border: 1px solid;
         font-size: 5vw;
+        padding: 1vw;
     }
 }

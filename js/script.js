@@ -25,7 +25,7 @@ document.addEventListener("click", function (e) {
                 resultP = i;
                 break
             } else {
-                resultP += valueFinal * 10;
+                resultP += valueFinal * 2;
                 document.getElementById('resultP').innerHTML = 'Outro resultdo'
             }
             i += 1;
@@ -40,7 +40,7 @@ document.addEventListener("click", function (e) {
                 resultN = i;
                 break
             } else {
-                resultN += valueFinal * 10;
+                resultN += valueFinal * 2;
                 document.getElementById('resultN').innerHTML = 'Outro resultdo'
             }
             i -= 1;
