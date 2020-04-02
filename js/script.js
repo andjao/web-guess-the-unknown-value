@@ -1,5 +1,5 @@
-const operators = [];
-let expression = 'v';
+let expression;
+let expressionE = ' ? ';
 let i = 0;
 let resultP;
 let resultN;
@@ -9,20 +9,21 @@ document.addEventListener("click", function (e) {
             alert('Preencha o campo por favor');
             return;
         }
-        operators.push(e.target.innerHTML)
         const valueFinal = parseInt(document.getElementById('valueFinal').value);
-        expression += e.target.innerHTML + 'v';
-        document.getElementById('expression').innerHTML = `${expression.replace(/v/g, ' ? ')} = ${valueFinal}`;
+        expressionE += e.target.value + ' ? ';
+        expression = expressionE.replace(/[*]/g, '×');
+        expression = expression.replace(/[/]/g, '÷');
+        document.getElementById('expression').innerHTML = `${expression} = ${valueFinal < 0 ? `(${valueFinal})` : valueFinal}`;
         while (i !== resultP &&
             i < (valueFinal > 0 ?
                 valueFinal * 2 :
                 -valueFinal * 2)) {
-            if (eval(expression.replace(/v/g, i)) === valueFinal) {
-                document.getElementById('resultP').innerHTML = `A incógnita equivale =  <b>${i}</b><br>${expression.replace(/v/g, ` ${i} `)} = ${valueFinal}`;
+            if (eval(expressionE.replace(/[?]/g, i)) === valueFinal) {
+                document.getElementById('resultP').innerHTML = `A incógnita equivale =  <b>${i}</b><br>${expression.replace(/[?]/g, ` ${i} `)} = ${valueFinal}`;
                 resultP = i;
                 break
             } else {
-                resultP += operators.length * valueFinal;
+                resultP += valueFinal * 10;
                 document.getElementById('resultP').innerHTML = 'Outro resultdo'
             }
             i += 1;
@@ -32,12 +33,12 @@ document.addEventListener("click", function (e) {
             i > (valueFinal < 0 ?
                 valueFinal * 2 :
                 -valueFinal * 2)) {
-            if (eval(expression.replace(/v/g, `(${i})`)) === valueFinal) {
-                document.getElementById('resultN').innerHTML = `A incógnita equivale =  <b>(${i})</b><br>${expression.replace(/v/g, ` (${i}) `)} = ${valueFinal < 0 ? `(${valueFinal})` : valueFinal}`;
+            if (eval(expressionE.replace(/[?]/g, `(${i})`)) === valueFinal) {
+                document.getElementById('resultN').innerHTML = `A incógnita equivale =  <b>(${i})</b><br>${expression.replace(/[?]/g, ` (${i}) `)} = ${valueFinal < 0 ? `(${valueFinal})` : valueFinal}`;
                 resultN = i;
                 break
             } else {
-                resultN += operators.length * valueFinal;
+                resultN += valueFinal * 10;
                 document.getElementById('resultN').innerHTML = 'Outro resultdo'
             }
             i -= 1;
@@ -45,8 +46,7 @@ document.addEventListener("click", function (e) {
         i = 0;
     }
     if (e.target.id === 'clear') {
-        operators.pop;
-        expression = 'v';
+        expressionE = ' ? ';
         document.getElementById('valueFinal').value = '';
         document.getElementById('expression').innerHTML = '';
         document.getElementById('resultP').innerHTML = '';
