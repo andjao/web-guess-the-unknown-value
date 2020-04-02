@@ -14,3 +14,47 @@
     min-height: 20px;
     border: 1px solid;
 }
+
+@media only screen and (max-width: 360px) {
+    h1 {
+        font-size: 8vw;
+    }
+
+    #valueFinal {
+        width: 30%;
+        min-height: 10vw;
+        font-size: 8vw;
+    }
+
+    button {
+        width: 18%;
+        height: 10vw;
+        font-size: 8vw;
+    }
+
+    label {
+        font-size: 5vw;
+
+    }
+
+    #expression {
+        height: 10vw;
+        border: 1px solid;
+        margin: 10px 0 10px 0;
+        font-size: 5vw;
+        min-height: 10vw;
+    }
+
+    #resultP {
+        min-height: 10vw;
+        border: 1px solid;
+        margin-bottom: 10px;
+        font-size: 5vw;
+    }
+
+    #resultN {
+        min-height: 10vw;
+        border: 1px solid;
+        font-size: 5vw;
+    }
+}
