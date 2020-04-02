@@ -6,8 +6,9 @@ let resultN;
 document.addEventListener("click", function (e) {
     if (e.target.id === 'operator') {
         if (document.getElementById('valueFinal').value === '') {
-            document.getElementById('valueFinal').focus();
-            alert('Preencha o campo por favor');
+            if (!alert('Preencha o campo por favor')) {
+                document.getElementById('valueFinal').focus();
+            };
             return;
         }
         const valueFinal = parseInt(document.getElementById('valueFinal').value);
