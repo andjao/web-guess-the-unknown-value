@@ -1,0 +1,16 @@
+#expression {
+    height: 20px;
+    border: 1px solid;
+    margin: 10px 0 10px 0;
+}
+
+#resultP {
+    min-height: 20px;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+
+#resultN {
+    min-height: 20px;
+    border: 1px solid;
+}
