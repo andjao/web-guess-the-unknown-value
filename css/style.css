@@ -17,13 +17,14 @@
 
 @media only screen and (max-width: 360px) {
     h1 {
-        font-size: 8vw;
+        font-size: 7vw;
     }
 
     #valueFinal {
         width: 30%;
         min-height: 10vw;
         font-size: 8vw;
+        margin-bottom: 2vw;
     }
 
     button {
