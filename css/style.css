@@ -40,13 +40,15 @@ button {
     }
 
     button {
-        width: 18%;
-        height: 10vw;
-        font-size: 5vw;
+        width: 18.9%;
+        height: 15vw;
+        font-size: 8vw;
+        padding: 0;
+        margin: 0;
     }
 
     #clear {
-        font-size: 6.25vw;
+        font-size: 10vw;
     }
 
     label {
