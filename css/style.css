@@ -1,5 +1,17 @@
+#valueFinal {
+    margin-bottom: 10px;
+}
+
+button {
+    font-size: 16pt;
+}
+
+#clear {
+    font-size: 19pt;
+}
+
 #expression {
-    height: 20px;
+    min-height: 20px;
     border: 1px solid;
     margin: 10px 0 10px 0;
 }
@@ -30,11 +42,11 @@
     button {
         width: 18%;
         height: 10vw;
-        font-size: 6vw;
+        font-size: 5vw;
     }
 
     #clear {
-        font-size: 8vw;
+        font-size: 6.25vw;
     }
 
     label {
