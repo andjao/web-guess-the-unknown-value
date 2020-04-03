@@ -3,6 +3,8 @@ let expressionE = ' ? ';
 let i = 0;
 let resultP;
 let resultN;
+const emojis = ['😃', '😁', '😍', '💀', '👕', '👖', '👟', '🎩', '🎓', '🕶️', '🐶', '🐱', '🌎', '⭐', '🍎', '🍌', '🍓', '🍔', '🍟', '🍕', '⚽', '🏀', '🎱', '🚲', '🚍', '🚘', '✈️', '🏠', '🔑', '🎁', '❤️', '🎵', '🕒'];
+let emoji;
 document.addEventListener("click", function (e) {
     if (e.target.id === 'operator') {
         if (document.getElementById('valueFinal').value === '') {
@@ -51,7 +53,8 @@ document.addEventListener("click", function (e) {
         expressionE = ' ? ';
         document.getElementById('valueFinal').value = '';
         document.getElementById('valueFinal').focus();
-        document.getElementById('expression').innerHTML = 'Exemplo:<br>⚽ × ⚽ - ⚽ = 6<br>3 × 3 - 3 = 6';
+        emoji = emojis[Math.floor(Math.random() * emojis.length)]
+        document.getElementById('expression').innerHTML = `Exemplo:<br>${emoji} × ${emoji} - ${emoji} = 6<br>3 × 3 - 3 = 6`;
         document.getElementById('resultP').innerHTML = '';
         document.getElementById('resultN').innerHTML = '';
     }

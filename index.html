@@ -19,7 +19,11 @@
     <button id="clear">C</button>
     <br><br>
     <label>Expressão:</label>
-    <div id="expression">Exemplo:<br>⚽ × ⚽ - ⚽ = 6<br>3 × 3 - 3 = 6</div>
+    <div id="expression"></div>
+    <script>
+        emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        document.getElementById('expression').innerHTML = `Exemplo:<br>${emoji} × ${emoji} - ${emoji} = 6<br>3 × 3 - 3 = 6`
+    </script>
     <label>Resultado Positivo:</label>
     <div id="resultP"></div>
     <label>Resultado Negativo:</label>
