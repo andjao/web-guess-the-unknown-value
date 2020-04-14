@@ -5,12 +5,14 @@ let resultP;
 let resultN;
 const emojis = ['😃', '😁', '😍', '💀', '👕', '👖', '👟', '🎩', '🎓', '🕶️', '🐶', '🐱', '🌎', '⭐', '🍎', '🍌', '🍓', '🍔', '🍟', '🍕', '⚽', '🏀', '🎱', '🚲', '🚍', '🚘', '✈️', '🏠', '🔑', '🎁', '❤️', '🎵', '🕒'];
 let emoji;
+let time0, time1, time2;
+let tooltipType;
+
 document.addEventListener("click", function (e) {
     if (e.target.id === 'operator') {
         if (document.getElementById('valueFinal').value === '') {
-            if (!alert('Preencha o campo por favor')) {
-                document.getElementById('valueFinal').focus();
-            };
+            tooltip('alert', 'Por favor, preencha o campo', 'red')
+            document.getElementById('valueFinal').focus();
             return;
         }
         const valueFinal = parseInt(document.getElementById('valueFinal').value);
@@ -59,3 +61,23 @@ document.addEventListener("click", function (e) {
         document.getElementById('resultN').innerHTML = '';
     }
 });
+
+function tooltip(type, text, color) {
+    clearTimeout(time0);
+    clearTimeout(time1);
+    clearTimeout(time2);
+    tooltipType = type;
+    document.getElementById("tooltip").className = "hiden";
+    document.getElementById("tooltip").innerHTML = text;
+    document.getElementById("tooltip").style.backgroundColor = color;
+    const time = 200;
+    time0 = setTimeout(function () {
+        document.getElementById("tooltip").className = "show";
+    }, time);
+    time1 = setTimeout(function () {
+        document.getElementById("tooltip").className = "hiden2";
+    }, time + 3000);
+    time2 = setTimeout(function () {
+        document.getElementById("tooltip").className = "hiden";
+    }, time + 3500);
+}
